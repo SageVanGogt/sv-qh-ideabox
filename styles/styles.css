@@ -11,10 +11,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 48vh;
-
 }
-
-
 
 .section__search {
   display: flex;
@@ -30,7 +27,7 @@ main {
 
 .input__field {
   height: 25px;
-  padding-top: 5px
+  padding-top: 5px;
 }
 
 .input__title {
@@ -39,6 +36,7 @@ main {
 
 .input__body {
  display: block;
+ margin: 10px 0;
 }
 
 ::placeholder {
@@ -50,15 +48,26 @@ main {
   display: block;
   height: 35px;
   text-align: center;
+  color: white;
 }
 
 .button__save:hover {
   background-color: #045e55;
 }
 
+/* Search */
+.input__search {
+  width: 60%;
+  margin-top: 15px;
+  height: 25px;
+  padding-top: 5px;
+
+}
+
 /* text and colors */
 header {
  font-family: 'Roboto Slab', serif;
+ margin-bottom: 30px;
 }
 
 h1 {

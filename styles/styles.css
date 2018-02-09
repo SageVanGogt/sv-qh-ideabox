@@ -10,9 +10,29 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 48vh;
+
+}
+
+
+
+.section__search {
+  display: flex;
+  justify-content: center;
 }
 
 /*form*/
+.form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input__field {
+  height: 25px;
+  padding-top: 5px
+}
+
 .input__title {
  display: block;
 }
@@ -21,9 +41,15 @@ main {
  display: block;
 }
 
+::placeholder {
+  font-size: 20px;
+}
+
 .button__save {
   background-color: #00a79d;
   display: block;
+  height: 35px;
+  text-align: center;
 }
 
 .button__save:hover {
@@ -33,6 +59,10 @@ main {
 /* text and colors */
 header {
  font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+  font-size: 7vh;
 }
 
 .header--idea {

@@ -1,0 +1,44 @@
+/* base layer */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  background-color: #e5f3f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*form*/
+.input__title {
+ display: block;
+}
+
+.input__body {
+ display: block;
+}
+
+.button__save {
+  background-color: #00a79d;
+  display: block;
+}
+
+.button__save:hover {
+  background-color: #045e55;
+}
+
+/* text and colors */
+header {
+ font-family: 'Roboto Slab', serif;
+}
+
+.header--idea {
+  color: #00a79d;
+}
+
+.header--box {
+  color: #6d6e71;
+}

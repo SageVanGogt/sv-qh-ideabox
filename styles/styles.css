@@ -16,7 +16,7 @@ main {
 .section__search {
   display: flex;
   justify-content: center;
-  margin-top: 1vh;
+  align-items: center;
   margin-bottom: 4vh;
 }
 
@@ -28,11 +28,14 @@ main {
 }
 
 .input__field {
-  height: 4vh;
-  padding-left: 1%;
-  font-size: 110%;
+  height: 4.5vh;
+  align-items: center;
+  font-size: 130%;
   color: #6d6e71;
   margin-bottom: 4vh;
+  border: solid 2px rgb(196, 197, 199);
+  padding-left: 1%;
+  padding-top: 5px;
 }
 
 .input__title {
@@ -42,11 +45,14 @@ main {
 .input__body {
  display: block;
  margin-bottom: 4vh;
+ padding-top: 0px;
+ padding-bottom: 5px;
+ resize: none;
 }
 
 ::placeholder {
-  font-size: 110%;
-  color: #939598;
+  font-size: 130%;
+  color: rgb(196, 197, 199);
 }
 
 .button__save {
@@ -88,4 +94,20 @@ h1 {
 
 .header--box {
   color: #6d6e71;
+}
+
+@media only screen and (max-width: 500px) {
+
+    main {
+      height: 50vh;
+    }
+
+    .input__body {
+      height: 100px;
+    }
+
+    .button__save {
+      margin-bottom: 5vh;
+      height: 4vh;
+    }
 }

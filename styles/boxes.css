@@ -1,0 +1,33 @@
+/* Card Layout */
+
+.section__ideas {
+  width: 100%;
+  display: flex;
+  justify-content: center
+}
+
+.card__ideas {
+  width: 60%;
+}
+
+/* Card Styling */
+h2 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.quality--text {
+  font-family: 'Roboto Slab', serif;
+}
+
+.card--top {
+  display: block;
+}
+
+.card--top h2 {
+  display: inline-block;
+}
+
+.card--top button {
+  display: inline-block;
+  float: right;
+}

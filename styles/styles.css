@@ -10,12 +10,14 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 48vh;
+  height: 45vh;
 }
 
 .section__search {
   display: flex;
   justify-content: center;
+  margin-top: 1vh;
+  margin-bottom: 4vh;
 }
 
 /*form*/
@@ -26,8 +28,11 @@ main {
 }
 
 .input__field {
-  height: 25px;
-  padding-top: 5px;
+  height: 4vh;
+  padding-left: 1%;
+  font-size: 110%;
+  color: #6d6e71;
+  margin-bottom: 4vh;
 }
 
 .input__title {
@@ -36,19 +41,21 @@ main {
 
 .input__body {
  display: block;
- margin: 10px 0;
+ margin-bottom: 4vh;
 }
 
 ::placeholder {
-  font-size: 20px;
+  font-size: 110%;
+  color: #939598;
 }
 
 .button__save {
   background-color: #00a79d;
   display: block;
-  height: 35px;
+  height: 4vh;
   text-align: center;
   color: white;
+  padding-top: 1.3vh;
 }
 
 .button__save:hover {
@@ -57,17 +64,18 @@ main {
 
 /* Search */
 .input__search {
-  width: 60%;
+  width: 59%;
   margin-top: 15px;
-  height: 25px;
-  padding-top: 5px;
-
+  height: 4vh;
+  padding-left: 1%;
+  font-size: 110%;
+  color: #6d6e71;
 }
 
 /* text and colors */
 header {
  font-family: 'Roboto Slab', serif;
- margin-bottom: 30px;
+ margin-bottom: 5vh;
 }
 
 h1 {

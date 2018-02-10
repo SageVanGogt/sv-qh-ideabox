@@ -3,22 +3,26 @@
 .section__ideas {
   width: 100%;
   display: flex;
-  justify-content: center
+  justify-content: center;
+  color: #6d6e71;
 }
 
 .card__ideas {
   width: 60%;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #d1d3d4;
+  padding-bottom: 3vh;
 }
 
 /* Card Styling */
 h2 {
   font-family: 'Roboto Slab', serif;
-  font-size: 31px;
+  font-size: 22px;
 }
 
 .card__ideas p {
-  font-size: 22px;
+  font-size: 16px;
+  color: #939598;
+  margin-bottom: 3vh;
 }
 
 .quality--text {
@@ -27,6 +31,8 @@ h2 {
 
 .card--top {
   display: block;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .card--top h2 {
@@ -45,8 +51,14 @@ h2 {
   height:30px;
   border: none;
 }
+
 .button__delete:hover {
   background: url(../images/delete-hover.svg);
+}
+
+.card--bottom {
+  display: flex;
+  align-items: center;
 }
 
 .button__upvote {
@@ -54,6 +66,7 @@ h2 {
   width:30px;
   height:30px;
   border: none;
+  margin-right: 3%;
 }
 
 .button__upvote:hover {
@@ -62,9 +75,10 @@ h2 {
 
 .button__downvote {
   background: url(../images/downvote.svg);
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
   border: none;
+  margin-right: 3%;
 }
 
 .button__downvote:hover {

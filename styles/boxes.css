@@ -8,11 +8,17 @@
 
 .card__ideas {
   width: 60%;
+  border-bottom: 1px solid gray;
 }
 
 /* Card Styling */
 h2 {
   font-family: 'Roboto Slab', serif;
+  font-size: 31px;
+}
+
+.card__ideas p {
+  font-size: 22px;
 }
 
 .quality--text {
@@ -30,4 +36,37 @@ h2 {
 .card--top button {
   display: inline-block;
   float: right;
+}
+
+/* button icons */
+.button__delete {
+  background: url(../images/delete.svg);
+  width:30px;
+  height:30px;
+  border: none;
+}
+.button__delete:hover {
+  background: url(../images/delete-hover.svg);
+}
+
+.button__upvote {
+  background: url(../images/upvote.svg);
+  width:30px;
+  height:30px;
+  border: none;
+}
+
+.button__upvote:hover {
+  background: url(../images/upvote-hover.svg);
+}
+
+.button__downvote {
+  background: url(../images/downvote.svg);
+  width:30px;
+  height:30px;
+  border: none;
+}
+
+.button__downvote:hover {
+  background: url(../images/downvote-hover.svg);
 }

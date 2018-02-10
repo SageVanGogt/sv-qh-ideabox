@@ -10,12 +10,14 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 48vh;
+  height: 45vh;
 }
 
 .section__search {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 4vh;
 }
 
 /*form*/
@@ -26,7 +28,13 @@ main {
 }
 
 .input__field {
-  height: 25px;
+  height: 4.5vh;
+  align-items: center;
+  font-size: 130%;
+  color: #6d6e71;
+  margin-bottom: 4vh;
+  border: solid 2px rgb(196, 197, 199);
+  padding-left: 1%;
   padding-top: 5px;
 }
 
@@ -36,19 +44,24 @@ main {
 
 .input__body {
  display: block;
- margin: 10px 0;
+ margin-bottom: 4vh;
+ padding-top: 0px;
+ padding-bottom: 5px;
+ resize: none;
 }
 
 ::placeholder {
-  font-size: 20px;
+  font-size: 130%;
+  color: rgb(196, 197, 199);
 }
 
 .button__save {
   background-color: #00a79d;
   display: block;
-  height: 35px;
+  height: 4vh;
   text-align: center;
   color: white;
+  padding-top: 1.3vh;
 }
 
 .button__save:hover {
@@ -57,17 +70,18 @@ main {
 
 /* Search */
 .input__search {
-  width: 60%;
+  width: 59%;
   margin-top: 15px;
-  height: 25px;
-  padding-top: 5px;
-
+  height: 4vh;
+  padding-left: 1%;
+  font-size: 110%;
+  color: #6d6e71;
 }
 
 /* text and colors */
 header {
  font-family: 'Roboto Slab', serif;
- margin-bottom: 30px;
+ margin-bottom: 5vh;
 }
 
 h1 {
@@ -80,4 +94,20 @@ h1 {
 
 .header--box {
   color: #6d6e71;
+}
+
+@media only screen and (max-width: 500px) {
+
+    main {
+      height: 50vh;
+    }
+
+    .input__body {
+      height: 100px;
+    }
+
+    .button__save {
+      margin-bottom: 5vh;
+      height: 4vh;
+    }
 }

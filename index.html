@@ -7,18 +7,19 @@
   <link rel="stylesheet" type="text/css" href="styles/boxes.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <main>
     <header><h1><span class="header--idea">idea</span><span class="header--box">box</span></h1></header>
     <form action="" class="form">
       <input type="text" class="input__field input__title" placeholder="Title">
-      <input type="text" class="input__field input__body" placeholder="Body">
+      <textarea type="text" class="input__field input__body" placeholder="Body"></textarea>
       <submit class="button__save">Save</submit>
     </form>
   </main>
   <section class="section__search">
-    <input type="text" class="input__search" placeholder="Search"></input>
+    <input type="text" class="input__field input__search" placeholder="Search"></input>
   </section>
   <section class="section__ideas">
     <article class="card__ideas">
@@ -30,7 +31,7 @@
       <div class="card--bottom">
       <button class="button__upvote"></button>
       <button class="button__downvote"></button>
-      <span class="quality--text">quality:</span><span class="quality--status">swill</span>
+      <span class="quality--text">quality:</span><span class="quality--status">&nbsp swill</span>
     </div>
   </article>
   </section>

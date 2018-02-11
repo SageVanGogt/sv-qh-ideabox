@@ -1,3 +1,4 @@
+//variables
 var $cardTitle = $('.input__title');
 
 var $cardBody = $('.input__body');
@@ -6,6 +7,9 @@ var $saveButton = $('.button__save')
 
 $saveButton.on('click', createNewIdea);
 
+$('.section__ideas').on('click', '.button__delete', deleteCard)
+
+//generating prepend card
 function createNewIdea(e) {
   e.preventDefault();
   newIdeaCard = new IdeaCard($cardTitle.val(), $cardBody.val());
@@ -32,3 +36,8 @@ IdeaCard.prototype.cardFormat = function() {
     </div>
   </article>`)
 };
+
+//deleting individual cards
+function deleteCard() {
+  $(this).closest('article').remove();
+}

@@ -1,4 +1,5 @@
-$('#form__btn-submit').on('click', createCard);
+$('.button__save').on('click', createCard);
+// $('.button__save').on('click', Idea);
  // have a global array to push 
  // date thing to individualize each card and change the local storage. this should be an ID for local storage
 // console.log(title)
@@ -9,26 +10,32 @@ function Idea(title, body) {
   this.rating = 'swill'
 }
 
-Idea.prototype.makeHTML () {
+Idea.prototype.makeHTML = function() {
   return (
-    `<article class="bookmark">
-        <h2 class="bookmark__website-title">${this.title}</h2>
-        <hr>
-        <a href="" class="bookmark__website-link">${this.body}</a>
-        <hr>
-        <button class="bookmark__btn-read">Read</button>
-        <button class="bookmark__btn-delete">Delete</button>
-      </article>`
+    `<article class="card__ideas">
+      <div class="card--top">
+      <h2>${this.title}</h2>
+      <button class="button__delete"></button>
+      </div>
+      <p>${this.body}</p>
+      <div class="card--bottom">
+      <button class="button__upvote"></button>
+      <button class="button__downvote"></button>
+      <span class="quality--text">quality:</span><span class="quality--status">&nbsp ${this.rating}</span>
+    </div>
+  </article>`
   )
 }
 
-function making a card() {
-  var newTitle = $('#form__input-title')
-  var newBody = $('#form__input-url')
-  ideaNew = new Idea(newTitle.val(), newBody.val())
-
+function createCard(e) {
+  e.preventDefault();
+  console.log('here?');
+  var newTitle = $('.input__title');
+  var newBody = $('.input__body');
+  ideaNew = new Idea(newTitle.val(), newBody.val());
+console.log('showup?')
   // push newIdea to an array here?
-  $('.section__ideas').prepend(ideaNew.generateHTML())
+  $('.section__ideas').prepend(ideaNew.makeHTML());
   }
 
 // Bookmark.prototype.prependBookmark = function(){

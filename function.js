@@ -22,7 +22,7 @@ function IdeaCard(title, body) {
 }
 
 function cardFormat(idea) {
-  return (`<article class="card__ideas id="${idea.id}">
+  return (`<article class="card__ideas" id="${idea.id}">
       <div class="card--top">
       <h2>${idea.title}</h2>
       <button class="button__delete"></button>
@@ -38,6 +38,8 @@ function cardFormat(idea) {
 
 //deleting individual cards
 function deleteCard() {
+  var key = $(this).parent().parent().attr('id');
+  localStorage.removeItem(key);
   $(this).closest('article').remove();
 }
 
@@ -46,7 +48,7 @@ window.onload = function() {
    for (var i = 0; i < localStorage.length; i++) {
     var getIdeas = localStorage.getItem(localStorage.key(i));
     var parseIdeas = JSON.parse(getIdeas);
-      $('.section__ideas').prepend(cardFormat(parseIdeas))
+      $('.section__ideas').prepend(cardFormat(parseIdeas));
     }
   }
 

@@ -48,10 +48,10 @@ function IdeaCard(title, body) {
 function cardFormat(idea) {
   return (`<article class="card__ideas" id="${idea.id}">
       <div class="card--top">
-      <h2>${idea.title}</h2>
+      <h2 contenteditable>${idea.title}</h2>
       <button class="button__delete"></button>
       </div>
-      <p>${idea.body}</p>
+      <p contenteditable>${idea.body}</p>
       <div class="card--bottom">
       <button class="button__upvote"></button>
       <button class="button__downvote"></button>
@@ -128,4 +128,17 @@ function downvoteIdea() {
     $(this).siblings('.quality--status').html('&nbsp swill');
   }
 }
+
+$ideaBoard.on('blur', 'h2', editIdeaTitle);
+
+function editIdeaTitle() {
+  var newTitle = $(this).text();
+  console.log(newTitle)
+}
+
+
+
+
+
+
 

@@ -130,10 +130,21 @@ function downvoteIdea() {
 }
 
 $ideaBoard.on('blur', 'h2', editIdeaTitle);
-
 function editIdeaTitle() {
   var newTitle = $(this).text();
-  console.log(newTitle)
+  var key = $(this).parent().parent().attr('id');
+  var idea = decodeIdea(key);
+  idea.title = newTitle;
+  encodeIdea(key, idea);
+}
+
+$ideaBoard.on('blur', 'p', editIdeaBody);
+function editIdeaBody() {
+  var newBody = $(this).text();
+  var key = $(this).siblings().parent().attr('id');
+  var idea = decodeIdea(key);
+  idea.body = newBody;
+  encodeIdea(key, idea);
 }
 
 

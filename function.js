@@ -45,6 +45,14 @@ function IdeaCard(title, body) {
   this.quality = 'swill';
 }
 
+// textarea submits on enterkey
+$cardBody.on('keyup', function(e){
+  if (e.keyCode === 13) {
+    $saveButton.click()
+  }
+});
+
+
 function cardFormat(idea) {
   return (`<article class="card__ideas" id="${idea.id}">
       <div class="card--top">
@@ -146,8 +154,6 @@ function editIdeaBody() {
   idea.body = newBody;
   encodeIdea(key, idea);
 }
-
-
 
 
 

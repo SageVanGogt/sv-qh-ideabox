@@ -1,19 +1,18 @@
 //variables
 var $cardTitle = $('.input__title');
 var $cardBody = $('.input__body');
-var $saveButton = $('.button__save')
-var $ideaBoard = $('.section__ideas')
-var $searchedItems = $('.input__search')
-// var $quality = $('.quality--status')
+var $saveButton = $('.button__save');
+var $ideaBoard = $('.section__ideas');
+var $searchedItems = $('.input__search');
 $saveButton.on('click', createNewIdea);
 $ideaBoard.on('click', '.button__delete', deleteCard);
 $ideaBoard.on('click', '.button__upvote', upvoteIdea);
 $ideaBoard.on('click', '.button__downvote', downvoteIdea);
-$searchedItems.on('keyup', searchIdeas)
-// $searchedItems.on('input',showSearched);
+$searchedItems.on('keyup', searchIdeas);
+$ideaBoard.on('blur', 'h2', editIdeaTitle);
+$ideaBoard.on('blur', 'p', editIdeaBody);
 
-
-//generating prepend card
+//Generating prepend card
 function createNewIdea(e) {
   e.preventDefault();
   newIdeaCard = new IdeaCard($cardTitle.val(), $cardBody.val());
@@ -32,7 +31,7 @@ function encodeIdea(key, idea){
   localStorage.setItem(key, JSON.stringify(idea))
 }
 
-//resettting fields
+//Resetting fields
 function resetFields() {
   $cardTitle.val('');
   $cardBody.val('');
@@ -45,30 +44,22 @@ function IdeaCard(title, body) {
   this.quality = 'swill';
 }
 
-// textarea submits on enterkey
-$cardBody.on('keyup', function(e){
-  if (e.keyCode === 13) {
-    $saveButton.click()
-  }
-});
-
-
 function cardFormat(idea) {
   return (`<article class="card__ideas" id="${idea.id}">
-      <div class="card--top">
-      <h2 contenteditable>${idea.title}</h2>
-      <button class="button__delete"></button>
-      </div>
-      <p contenteditable>${idea.body}</p>
-      <div class="card--bottom">
-      <button class="button__upvote"></button>
-      <button class="button__downvote"></button>
-      <span class="quality--text">quality:</span><span class="quality--status">&nbsp ${idea.quality}</span>
+    <div class="card--top">
+    <h2 contenteditable>${idea.title}</h2>
+    <button class="button__delete"></button>
     </div>
-  </article>`)
+    <p contenteditable>${idea.body}</p>
+    <div class="card--bottom">
+    <button class="button__upvote"></button>
+    <button class="button__downvote"></button>
+    <span class="quality--text">quality:</span><span class="quality--status">&nbsp ${idea.quality}</span>
+    </div>
+    </article>`)
 };
 
-//deleting individual cards
+//Deleting individual cards and removing from local storage
 function deleteCard() {
   var key = $(this).parent().parent().attr('id');
   localStorage.removeItem(key);
@@ -77,28 +68,14 @@ function deleteCard() {
 
 //Load Ideas from local storage
 window.onload = function() {
-   for (var i = 0; i < localStorage.length; i++) { //.forEach
+  for (var i = 0; i < localStorage.length; i++) { //.forEach
     var getIdeas = localStorage.getItem(localStorage.key(i)); 
     var parseIdeas = JSON.parse(getIdeas);
-      $('.section__ideas').prepend(cardFormat(parseIdeas)); //not this
-    }
+    $('.section__ideas').prepend(cardFormat(parseIdeas)); //not this
   }
+}
 
-//search system
-//loop function to grab ideas. then if it matches input from user, prepend and hide the non matched other stuff. 
-//can we use array prototype filter() to search?
-//!!!indexOf prototype will serve as our search.
-// function showSearched() {
-// $('.card_ideas').hide();
-// // var searchedItems = localStorage.filter(function (search) {
-// //   if (search.body.indexof($searchedItems) !== -1) {
-// //     //hide these
-// //   } else {
-// //   return search.body.indexOf($searchedItems) !== -1;
-// //   }
-// // })
-//   $('.section__ideas').prepend(cardFormat(searchedItem));
-// }
+//Search through idea cards by title
 function searchIdeas() {
   var search = $(this).val();
   $("h2:contains('" + search + "')").closest(".card__ideas").show();
@@ -107,7 +84,7 @@ function searchIdeas() {
 }
 
 
-//upvote system
+//Upvote and downvote system display and save to local storage
 function upvoteIdea() {
   var key = $(this).parent().parent().attr('id');
   var idea = decodeIdea(key);
@@ -122,10 +99,9 @@ function upvoteIdea() {
   }
 }
 
-//downvote system. Can a global this variable become local if called in a function?
 function downvoteIdea() {
   var key = $(this).parent().parent().attr('id');
-  var idea = decodeIdea(key)// encode and decode functions called here should be convention
+  var idea = decodeIdea(key)
   if (idea.quality === 'genius') {
     idea.quality = 'plausible';
     encodeIdea(key, idea);
@@ -137,7 +113,7 @@ function downvoteIdea() {
   }
 }
 
-$ideaBoard.on('blur', 'h2', editIdeaTitle);
+//Saving editable content to local storage
 function editIdeaTitle() {
   var newTitle = $(this).text();
   var key = $(this).parent().parent().attr('id');
@@ -146,7 +122,6 @@ function editIdeaTitle() {
   encodeIdea(key, idea);
 }
 
-$ideaBoard.on('blur', 'p', editIdeaBody);
 function editIdeaBody() {
   var newBody = $(this).text();
   var key = $(this).siblings().parent().attr('id');
@@ -154,6 +129,13 @@ function editIdeaBody() {
   idea.body = newBody;
   encodeIdea(key, idea);
 }
+
+// textarea submits on enterkey
+$cardBody.on('keyup', function(e) {
+  if (e.keyCode === 13) {
+    $saveButton.click()
+  }
+});
 
 
 

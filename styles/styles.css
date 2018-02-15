@@ -39,7 +39,7 @@ main {
 }
 
 .input__body {
- resize: none;
+  resize: none;
 }
 
 ::placeholder {
@@ -91,6 +91,8 @@ h1 {
   color: #6d6e71;
 }
 
+
+/* Responsive media query*/
 @media only screen and (max-width: 500px) {
 
     main {

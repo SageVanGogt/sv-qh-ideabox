@@ -1,17 +1,17 @@
 /* Card Layout */
 
 .section__ideas {
-  width: 100%;
+  color: #6d6e71;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: #6d6e71;
+  width: 100%;
 }
 
 .card__ideas {
-  width: 60%;
   border-bottom: 1px solid #d1d3d4;
   padding-bottom: 3vh;
+  width: 60%;
 }
 
 /* Card Styling */
@@ -21,8 +21,8 @@ h2 {
 }
 
 .card__ideas p {
-  font-size: 120%;
   color: #939598;
+  font-size: 120%;
   margin-bottom: 3vh;
 }
 
@@ -32,8 +32,8 @@ h2 {
 
 .card--top {
   display: block;
-  margin-top: 2vh;
   margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 
 .card--top h2 {
@@ -48,9 +48,9 @@ h2 {
 /* button icons */
 .button__delete {
   background: url(../images/delete.svg);
-  width:30px;
-  height:30px;
   border: none;
+  height:30px;
+  width:30px;
 }
 
 .button__delete:hover {
@@ -58,16 +58,16 @@ h2 {
 }
 
 .card--bottom {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .button__upvote {
   background: url(../images/upvote.svg);
-  width:30px;
-  height:30px;
   border: none;
+  height:30px;
   margin-right: 3%;
+  width:30px;
 }
 
 .button__upvote:hover {
@@ -76,10 +76,10 @@ h2 {
 
 .button__downvote {
   background: url(../images/downvote.svg);
-  width: 30px;
-  height: 30px;
   border: none;
+  height: 30px;
   margin-right: 3%;
+  width: 30px;
 }
 
 .button__downvote:hover {

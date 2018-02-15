@@ -14,6 +14,19 @@ $ideaBoard.on('blur', 'p', editIdeaBody);
 $cardBody.on('keyup', saveActivate)
 $cardTitle.on('keyup', saveActivate)
 
+
+//Pull and push to local storage
+function decodeIdea(key){
+  var getIdea = localStorage.getItem(key);
+  var parseIdea = JSON.parse(getIdea);
+  return parseIdea
+}
+
+function encodeIdea(key, idea){
+  localStorage.setItem(key, JSON.stringify(idea))
+}
+
+//Enable save button
 function saveActivate() {
   if ($cardBody.val() !== '' && $cardTitle.val() !== '') {
     $saveButton.attr('disabled', false);
@@ -29,16 +42,6 @@ function createNewIdea(e) {
   resetFields();
 }
 
-function decodeIdea(key){
-  var getIdea = localStorage.getItem(key);
-  var parseIdea = JSON.parse(getIdea);
-  return parseIdea
-}
-
-function encodeIdea(key, idea){
-  localStorage.setItem(key, JSON.stringify(idea))
-}
-
 //Resetting fields
 function resetFields() {
   $cardTitle.val('');
@@ -47,6 +50,8 @@ function resetFields() {
   $cardTitle.focus();
 }
 
+
+//Object and prepend formatting in template literal
 function IdeaCard(title, body) {
   this.title = title;
   this.body = body;
@@ -64,10 +69,10 @@ function cardFormat(idea) {
     <div class="card--bottom">
     <button class="button__upvote" aria-label="upvote idea button"></button>
     <button class="button__downvote" aria-label="downvote idea button"></button>
-    <span class="quality--text">quality:</span><span class="quality--status" aria-live="true" aria-label="idea quality">&nbsp ${idea.quality}</span>
+    <span class="quality--text">quality:</span><span class="quality--status" tabindex="10" aria-live="true" aria-label="idea quality">&nbsp ${idea.quality}</span>
     </div>
     </article>`)
-};
+}
 
 //Deleting individual cards and removing from local storage
 function deleteCard() {

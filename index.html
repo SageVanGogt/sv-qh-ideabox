@@ -17,13 +17,13 @@
     <form type="submit" class="form" id="form">
       <input type="text" class="input__field input__title" placeholder="Title" aria-required="true" aria-label="input idea title">
       <textarea value="form" class="input__field input__body" placeholder="Body" aria-required="true" aria-label="input idea body"></textarea>
-      <input type="submit" value="save" class="button__save" disabled></input>
+      <input type="submit" value="save" class="button__save" aria-label="save idea button" disabled></input>
     </form>
   </main>
-  <section class="section__search" aria-label="search bar for ideas">
-    <input type="text" class="input__field input__search" placeholder="Search"></input>
+  <section class="section__search">
+    <input aria-label="search bar for ideas" type="text" class="input__field input__search" placeholder="Search"></input>
   </section>
-  <section class="section__ideas" aria-live=“polite” role="area with ideas">
+  <section class="section__ideas" aria-live=“polite” aria-label="area with ideas">
   </section>
   <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="function.js"></script>

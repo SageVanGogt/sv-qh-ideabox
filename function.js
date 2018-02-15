@@ -11,6 +11,14 @@ $ideaBoard.on('click', '.button__downvote', downvoteIdea);
 $searchedItems.on('keyup', searchIdeas);
 $ideaBoard.on('blur', 'h2', editIdeaTitle);
 $ideaBoard.on('blur', 'p', editIdeaBody);
+$cardBody.on('keyup', saveActivate)
+$cardTitle.on('keyup', saveActivate)
+
+function saveActivate() {
+  if ($cardBody.val() !== '' && $cardTitle.val() !== '') {
+    $saveButton.attr('disabled', false);
+  }
+}
 
 //Generating prepend card
 function createNewIdea(e) {
@@ -35,6 +43,8 @@ function encodeIdea(key, idea){
 function resetFields() {
   $cardTitle.val('');
   $cardBody.val('');
+  $saveButton.attr('disabled', true);
+  $cardTitle.focus();
 }
 
 function IdeaCard(title, body) {
@@ -45,16 +55,16 @@ function IdeaCard(title, body) {
 }
 
 function cardFormat(idea) {
-  return (`<article class="card__ideas" id="${idea.id}">
+  return (`<article class="card__ideas" id="${idea.id}" aria-label="this is an idea card">
     <div class="card--top">
-    <h2 contenteditable>${idea.title}</h2>
-    <button class="button__delete"></button>
+    <h2 aria-label="idea title" contenteditable>${idea.title}</h2>
+    <button class="button__delete" aria-label="delete button"></button>
     </div>
-    <p contenteditable>${idea.body}</p>
+    <p aria-label="idea content" contenteditable>${idea.body}</p>
     <div class="card--bottom">
-    <button class="button__upvote"></button>
-    <button class="button__downvote"></button>
-    <span class="quality--text">quality:</span><span class="quality--status">&nbsp ${idea.quality}</span>
+    <button class="button__upvote" aria-label="upvote idea button"></button>
+    <button class="button__downvote" aria-label="downvote idea button"></button>
+    <span class="quality--text">quality:</span><span class="quality--status" aria-live="true" aria-label="idea quality">&nbsp ${idea.quality}</span>
     </div>
     </article>`)
 };

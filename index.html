@@ -11,17 +11,19 @@
 </head>
 <body>
   <main>
-    <header><h1><span class="header--idea">idea</span><span class="header--box">box</span></h1></header>
+    <header>
+      <h1><span class="header--idea">idea</span><span class="header--box">box</span></h1>
+    </header>
     <form type="submit" class="form" id="form">
-      <input type="text" class="input__field input__title" placeholder="Title">
-      <textarea value="form" class="input__field input__body" placeholder="Body"></textarea>
-      <input type="submit" value="save" class="button__save"></input>
+      <input type="text" class="input__field input__title" placeholder="Title" aria-required="true" aria-label="input idea title">
+      <textarea value="form" class="input__field input__body" placeholder="Body" aria-required="true" aria-label="input idea body"></textarea>
+      <input type="submit" value="save" class="button__save" disabled></input>
     </form>
   </main>
-  <section class="section__search">
+  <section class="section__search" aria-label="search bar for ideas">
     <input type="text" class="input__field input__search" placeholder="Search"></input>
   </section>
-  <section class="section__ideas">
+  <section class="section__ideas" aria-live=“polite” role="area with ideas">
   </section>
   <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="function.js"></script>

@@ -30,9 +30,9 @@ Idea.prototype.makeHTML = function() {
 function createCard(e) {
   e.preventDefault();
   console.log('here?');
-  var newTitle = $('.input__title');
-  var newBody = $('.input__body');
-  ideaNew = new Idea(newTitle.val(), newBody.val());
+  var newTitle = $('.input__title').val();
+  var newBody = $('.input__body').val();
+  ideaNew = new Idea(newTitle, newBody);
 console.log('showup?')
   // push newIdea to an array here?
   $('.section__ideas').prepend(ideaNew.makeHTML());
